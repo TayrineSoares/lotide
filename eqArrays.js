@@ -8,9 +8,6 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(first, second) {
-  if (first.length !== second.length) {
-    return false; 
-  }
   if (first.length === second.length) {
     for (let i = 0; i < first.length; i++) {
       if (first[i] !== second[i]) {
