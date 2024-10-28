@@ -20,8 +20,15 @@ const assertArraysEqual = function(arr1, arr2) {
 assertArraysEqual([1, 2, 3], [1, 2,3]);
 
 const without = function(array, values) {
-  return array.filter(item => !values.includes(item));
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!values.includes(array[i])) {
+      result.push(array[i]); 
+    }
+  }
+  return result;
 };
+
 
 console.log(without([1, 2, 3, 4, 5], [2, 4]));
 console.log(without([1, 2, 3], [1]));
