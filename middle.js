@@ -41,3 +41,24 @@ const equalArrays = function(first, second) {
   return true;
 }
 
+const middle = function(array) {
+  const length = array.length;
+
+  const indexMiddle = Math.floor(length / 2);
+
+  if (length <= 2) {
+    return [];
+  } 
+  
+  if (length % 2 === 1) {
+    return [array[indexMiddle]];
+  } else {
+    return [array[indexMiddle - 1], array[indexMiddle]];
+  }
+};
+console.log(middle([1]));
+console.log(middle([1, 2])); 
+console.log(middle([1, 2, 3]));
+console.log(middle([1, 2, 3, 4, 5]));
+console.log(middle([1, 2, 3, 4]));
+console.log(middle([1, 2, 3, 4, 5, 6]));
