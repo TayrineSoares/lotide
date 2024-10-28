@@ -40,8 +40,22 @@ const equalArrays = function(first, second) {
     }
   return true;
 }
-assertEqual(equalArrays([1, 2, 3], [1, 2, 3]), true); // => true
-assertEqual(equalArrays([1, 2, 3], [3, 2, 1]), false); // => false
-assertEqual(equalArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
-assertEqual(equalArrays(["1", "2", "3"], ["1", "2", 3]), false); // => false
 
+const flatten = function(array) {
+  const result = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const currentElement = array[i];
+  
+    if (Array.isArray(currentElement)) {
+      for (let j = 0; j < currentElement.length; j++) {
+        result.push(currentElement[j]);
+      }
+    } else {
+      result.push(currentElement);
+    }
+  }
+  return result; 
+}
+
+console.log(flatten([1, 2, [3, 4], 5, [6]]));
