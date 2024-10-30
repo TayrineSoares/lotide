@@ -34,7 +34,8 @@ const countLetters = function (str) {
 
 const test = "aabcca";
 const result = countLetters(test);
-const expectedOutput = {a: 3, b: 1, c: 2};
 console.log(countLetters(test));
 
-assertEqual(result, expectedOutput);
+assertEqual(result['a',3]);
+assertEqual(result['b',1]);
+assertEqual(result['c',2]);
