@@ -12,8 +12,23 @@ const assertEqual = function(actual, expected) {
 
 const countOnly = function (allItems, itemsToCount) {
   const results = {};
+  for (const item of allItems) {
+  if (results[item]) {
+    results[item] += 1;
+  } else {
+    results[item] = 1;
+  } 
+  if (itemsToCount[item]) {
+    if (results[item]) {
+      results[item] += 1;
+    } else {
+      results[item] = 1;
+    }
+  }
+}
 return results;
 };
+
 
 // Write the initial test code below the definition of your function.
 const firstNames = [
@@ -34,6 +49,9 @@ const result1 = countOnly(firstNames, {
   Fang: true,
   Agouhanna: false,
 });
+
+console.log(result1);
+
 
 assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
