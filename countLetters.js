@@ -12,14 +12,16 @@
 
 
 const countLetters = function (str) {
-  for (value of str) {
-    console.log(value);
-
+  const results = {};
+  for (const item of str) {
+    if (results[item]) {
+      results[item] += 1;
+    } else {
+      results[item] = 1;
+    }
+    }
+    return results;
   }
 
-
-}
-
-const test = "Testando";
-
+const test = "aabcca";
 console.log(countLetters(test));
