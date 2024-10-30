@@ -24,7 +24,6 @@ const countOnly = function (allItems, itemsToCount) {
 return results;
 };
 
-
 // Write the initial test code below the definition of your function.
 const firstNames = [
   "Karl",
