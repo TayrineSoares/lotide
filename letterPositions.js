@@ -16,10 +16,12 @@ const letterPositions = function (sentence) {
 
   for (let i = 0; i < sentence.length; i++) {
     const letters = sentence[i];
-    if (results[letters]) {
-      results[letters].push(i);
-    } else {
-      results[letters] = [i]
+    if (letters !== ' ') {
+      if (results[letters]) {
+        results[letters].push(i);
+      } else {
+        results[letters] = [i]
+      }
     }
   }
   return results;
@@ -48,5 +50,7 @@ const assertArraysEqual = function(arr1, arr2) {
     console.log("🛑🛑🛑 Assertion did not pass: The arrays are not equal.");
   }
 };
-
+assertArraysEqual(letterPositions("hello").h, [0]);
 assertArraysEqual(letterPositions("hello").e, [1]);
+assertArraysEqual(letterPositions("hello").l, [2, 3]);
+assertArraysEqual(letterPositions("hello").o, [4]);
