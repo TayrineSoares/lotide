@@ -5,21 +5,21 @@
 //SUDO CODING
 // create the function letterPositions that takes in a string (sentence)
 // iterate over the sentence using a loop 
-// store the letter and its ocurrency 
+// store the letter and its position 
 // print an object with results 
 
 
+
 const letterPositions = function (sentence) {
-// creating a new array to store the values 
+
   const results = {};
 
- 
-  for (i = 0; i < sentence.length; i++) {  // looping over the array
-     const letters = sentence[i]; // creating a variable to access each item of the array
-    if (results[letters]) {           // the if statement checks if [letters] exists in the results array. 
-      results[letters].push(i);       // if yes, it appends the current index i to the existing array of indices for that character.
+  for (let i = 0; i < sentence.length; i++) {
+    const letters = sentence[i];
+    if (results[letters]) {
+      results[letters].push(i);
     } else {
-       results[letters] = [i] // if it doesnt exist yet, initializes a new array with the current index i as its only element. This creates a new key-value pair in results where the key is the character and the value is an array containing its index.
+      results[letters] = [i]
     }
   }
   return results;
