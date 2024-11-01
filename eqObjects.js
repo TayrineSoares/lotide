@@ -37,11 +37,27 @@ const eqObjects = function (object1, object2) {
   }
   
   for (let key of keys1) {
-    if (object1[key] !== object2[key])
+    const value1 = object1[key];
+    const value2 = object2[key];
+    
+    if (Array.isArray(value1) && Array.isArray(value2)) {
+      // Use eqArrays to compare the array values
+      if (!eqArrays(value1, value2)) {
+        return false;
+      }
+    } else {
+      // Compare primitive values as usual
+      if (value1 !== value2) {
+        return false;
+      }
+    }
+    
+    if (object1[key] !== object2[key]) {
       return false; 
+    }
   }
-    return true;
-  };
+  return true;
+};
   
 // Tests
 
@@ -58,7 +74,7 @@ assertEqual(eqObjects(shirtObject, anotherShirtObject),true);
 
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 eqObjects(shirtObject, longSleeveShirtObject); // => false
-assertEqual(eqObjects(shirtObject, longSleeveShirtObject),false); 
+assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false); 
 
 
 // Step 4: Arrays As Values (Tests)
