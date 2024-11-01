@@ -26,7 +26,26 @@ const bestTVShowsByGenre = {
   drama: "The Wire",
 };
 
+// testing Object.keys function 
 console.log(Object.keys(bestTVShowsByGenre));
 
+// testing the function 
 console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
 console.log(findKeyByValue(bestTVShowsByGenre, "That '70s Show"));
+
+// adding assertEqual function to this file 
+
+const assertEqual = function(actual, expected) {
+
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
+
+
+// testing with assertEqual function 
+
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
