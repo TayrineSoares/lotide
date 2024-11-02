@@ -1,3 +1,16 @@
+const eqArrays = function(first, second) {
+  if (first.length !== second.length) {
+    return false; 
+  }
+    for (let i = 0; i < first.length; i++) {
+      if (first[i] !== second[i]) {
+      return false;
+      }
+    }
+  return true;
+}
+
+
 const eqObjects = function (object1, object2) {
 
   const keys1 = Object.keys(object1) 
@@ -27,3 +40,29 @@ const eqObjects = function (object1, object2) {
   return true;
 };
 
+//Implement assertObjectsEqual which will take in two objects and console.log an appropriate message to the console.
+
+const assertObjectsEqual = function (actual, expected) {
+  const inspect = require("util").inspect;
+  //console.log(`Example label: ${inspect(actual)}`);
+  
+  const isEqual = eqObjects(actual, expected)
+  if (isEqual) {
+    console.log(`✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}.`);
+  } else {
+    console.log(`🛑 Assertion did not pass: ${inspect(actual)} !== ${inspect(expected)}.`);
+  }
+  };
+
+
+//TESTS
+
+const obj1 = { a: "1", b: "2" };
+const obj2 = { a: "1", b: "2", c: [3, 4] };
+
+assertObjectsEqual(obj1, obj2);
+
+const object1 = { a: "1", b: 2 };
+const object2 = { b: 2, a: "1" };
+
+assertObjectsEqual(object1, object2);
