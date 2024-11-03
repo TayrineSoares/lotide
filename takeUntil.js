@@ -5,9 +5,8 @@
 // The array to work with
 // The callback (which Lodash calls "predicate")
 
-const _ = require('lodash'); 
 const takeUntil = function(array, callback) {
-  return _.takeWhile(array, (element) => !callback(element));
+
 };
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
