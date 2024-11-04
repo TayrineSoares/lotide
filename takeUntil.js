@@ -6,7 +6,7 @@
 // The callback (which Lodash calls "predicate")
 
 const takeUntil = function(array, callback) {
-  result = [];
+  const result = [];
   for (let item of array) {
     if (callback(item)) {
       break;
