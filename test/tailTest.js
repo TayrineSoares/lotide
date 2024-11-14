@@ -1,21 +1,21 @@
-const tail = require("../tail");
-const assertEqual = require("../assertEqual"); 
+const assert = require('chai').assert;
+const tail   = require('../tail');
 
-// ------------------------------------------------------
-//tests
+describe("#tail", () => {
+  it("returns 2, 3 for [1, 2, 3]", () => {
+    assert.deepEqual(tail([1, 2, 3]), [2, 3]);
+  });
 
-const words = (["Yo Yo", "Lighthouse", "Labs"]);
-assertEqual(words.length, 3);
+  it("returns ['Lighthouse, 'Labs'] for ['Hello', 'Lightshouse, 'Labs']", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+  });
 
+  it("returns 2 for the tail length of [1, 2, 3]", () => {
+    assert.deepEqual(tail([1, 2, 3]).length, 2);
+  });   
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
+  it("returns 0 for the tail length of [1]", () => {
+    assert.deepEqual(tail([1]).length, 0);
+  });  
 
-
-const result1 = tail([1, 2, 3]);
-
-assertEqual(tail(words).length, words.length - 1); //test that the tail function returns an array with the correct length, and that using an array with one or zero elements as an argument returns an empty array.
-
-assertEqual(tail(words)[0], "Lighthouse");//test that the first element of the returned array is the second element of the original array.
-
-assertEqual(tail(["test"]).length, 0);
-assertEqual(tail([]).length, 0); //both lines are testing the tail function with an array of one or zero elements.
+});
