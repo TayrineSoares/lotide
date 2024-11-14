@@ -11,7 +11,7 @@ describe("#tail", () => {
   });
 
   it("returns 2 for the tail length of [1, 2, 3]", () => {
-    assert.deepEqual(tail([1, 2, 3]).length, 2);
+    assert.strictEqual(tail([1, 2, 3]).length, 2);
   });   
 
   it("returns 0 for the tail length of [1]", () => {

@@ -9,7 +9,7 @@
 
 
 
-findKeyByValue = function (object, prize) {
+const findKeyByValue = function (object, prize) {
   const keys = Object.keys(object); 
 
   for (let item of keys) {
