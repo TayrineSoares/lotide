@@ -3,8 +3,6 @@
 
 // For example, countLetters('LHL') should return results indicating that L appears twice, and H once.
 
-// Before implementing this function, we need to think about how it will report back these counts. It's not that we want to know how many H's are in this sentence?, because that would just be a number. We need it report back multiple numbers.
-
 // take in the string 
 // loop through the string and identify letters 
 // increase the count and print letter + count 
