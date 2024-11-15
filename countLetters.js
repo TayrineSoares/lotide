@@ -1,13 +1,4 @@
-const assertEqual = function(actual, expected) {
 
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-//Create a function called countLetters.
 //The function should take in a sentence (as a string) and then return a count of each of the letters in that sentence.
 
 // For example, countLetters('LHL') should return results indicating that L appears twice, and H once.
@@ -32,10 +23,4 @@ const countLetters = function (str) {
     return results;
   }
 
-const test = "aabcca";
-const result = countLetters(test);
-console.log(countLetters(test));
-
-assertEqual(result['a'], 3);
-assertEqual(result['b'], 1);
-assertEqual(result['c'], 2);
+module.exports = countLetters; 
