@@ -1,7 +1,5 @@
 // Complete the object being exported by referencing all of the utility functions that our Lotide library offers, instead of just the three that we've listed so far.
 
-
-
 const assertArraysEqual   = require('./assertArraysEqual');
 const assertEqual         = require('./assertEqual');
 const assertObjectsEqual  = require('./assertObjectsEqual');
