@@ -1,45 +1,4 @@
-const eqArrays = function(first, second) {
-  if (first.length !== second.length) {
-    return false;
-  }
-  for (let i = 0; i < first.length; i++) {
-    if (first[i] !== second[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log("Assertion Passed: The arrays are equal.");
-  } else {
-    console.log("Assertion did not pass: The arrays are not equal.");
-  }
-};
-
-
-assertArraysEqual([1, 2, 3], [1, 2,3]);
-
-const assertEqual = function(actual, expected) {
-
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const equalArrays = function(first, second) {
-  if (first.length !== second.length) {
-    return false; 
-  }
-    for (let i = 0; i < first.length; i++) {
-      if (first[i] !== second[i]) {
-      return false;
-      }
-    }
-  return true;
-}
+// The  function flatten which will take in an array containing elements including nested arrays of elements, and return a "flattened" version of the array.
 
 const flatten = function(array) {
   const result = [];
@@ -58,4 +17,4 @@ const flatten = function(array) {
   return result; 
 }
 
-console.log(flatten([1, 2, [3, 4], 5, [6]]));
+module.exports = flatten; 
